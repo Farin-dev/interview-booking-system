@@ -77,8 +77,6 @@ Run the unit tests:
 # Run all tests
 mvn test
 
-# Run with code coverage report
-mvn clean test jacoco:report
 ```
 
 View the coverage report at: `target/site/jacoco/index.html`
