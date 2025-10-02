@@ -79,8 +79,6 @@ mvn test
 
 ```
 
-View the coverage report at: `target/site/jacoco/index.html`
-
 ## API Endpoints
 
 | Method | Endpoint | Description |
