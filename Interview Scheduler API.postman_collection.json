@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "b8246331-04fb-4ac9-911f-18e87944d007",
+		"name": "Interview Scheduler API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48973840",
+		"_collection_link": "https://farink-dev-4190637.postman.co/workspace/farink-dev's-Workspace~118e7018-ae7e-4e32-8817-50c8819e3d16/collection/48973840-b8246331-04fb-4ac9-911f-18e87944d007?action=share&source=collection_link&creator=48973840"
+	},
+	"item": [
+		{
+			"name": "Schedule Interview",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"candidateName\": \"John\",\n  \"interviewerName\": \"Andy\",\n  \"proposedDateTime\": \"2025-10-03T10:00:00\",\n  \"platform\": \"GOOGLE\",\n  \"recipientEmail\": \"john@gmail.com\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Respond to Interview Invite",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"recipientEmail\": \"john@gmail.com\",\n  \"responseStatus\": \"ACCEPTED\",\n  \"proposedDateTime\": null\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/bookings/{bookingId}/respond",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"bookings",
+						"{bookingId}",
+						"respond"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Booking Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/bookings/status/{bookingId}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"bookings",
+						"status",
+						"{bookingId}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
